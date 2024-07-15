@@ -16,7 +16,7 @@
         <div class="row g-4">
             @foreach ($news as $new)
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded overflow-hidden">
+                    <div style="height: 100%;" class="service-item rounded overflow-hidden">
                         <img style="width: 100%" class="img-fluid" src="{{ $new->image }}" alt="">
                         <div class="position-relative p-4 pt-0">
                             <h4 class="mt-5 mb-3">{{ $new->name }}</h4>

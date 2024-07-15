@@ -65,8 +65,10 @@ class NewsController extends Controller
     {
         return view('admin.news.show',compact('news'));
     }
-    public function show_client(News $news)
+    public function show_client($id)
     {
+        $news = News::findOrFail($id);
+        $news->increment('views');
         return view('client.show',compact('news'));
     }
     public function edit($id)

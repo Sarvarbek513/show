@@ -2,7 +2,7 @@
     <div class="container wow fadeIn" data-wow-delay="0.1s">
         <div class="copyright2">
             <div class="text-center text-md-start mb-3 mb-md-0">
-                <a class="border-bottom" href="#"><img class="img-footer" src="img/screen.png" alt=""></a>
+                <a class="border-bottom" href="#"><img class="img-footer" src="{{asset('img/screen.png')}}" alt=""></a>
             </div>
             <div class="nonee">
                 <div class="d-flex pt-2 d-flex2">

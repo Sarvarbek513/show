@@ -13,37 +13,6 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
-    {{-- <table class="table table-bordered">
-        <tr>
-            <th>No</th>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Long Description</th>
-        </tr>
-        @foreach ($news as $new)
-            <tr>
-                <td>{{ $new->id }}</td>
-                <td><img src="{{ $new->image }}" width="50" height="50"></td>
-                <td>{!! $new->description !!}</td>
-                <td>{!! $new->long_description !!}</td>
-                <td>
-                    <form action="{{ route('news.destroy',$new->id) }}" method="POST">
-
-                        <a class="btn btn-dark" href="{{ route('news.show',$new->id) }}">Show</a>
-
-                        <a class="btn btn-primary" href="{{ route('news.edit',$new->id) }}">Edit</a>
-
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
-    </table> --}}
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
@@ -64,7 +33,7 @@
                         @foreach ($news as $new)
                       <tr>
                         <td> {{ ++$i }} </td>
-                        <td><img src="{{ $new->image }}" width="50" height="50"></td>
+                        <td><img src="{{ asset($new->image) }}" width="150" height="100"></td>
                         <td>{!! $new->name !!}</td>
                         {{-- <td>{!! $new->long_description !!}</td> --}}
                         <td>{!! $new->description !!}</td>

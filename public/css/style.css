@@ -434,7 +434,13 @@ hr.custom-hr {
         padding-right: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
-
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+}
+.dropdown-menu i {
+    margin-right: 10px;
+}
 @media (min-width: 1200px) and (max-width: 1400px) {
     /* Your CSS rules go here */
     .div-item{
