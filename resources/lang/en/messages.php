@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'NEWS' => 'NEWS',
+    'ARTICLES' => 'ARTICLES AND ABSTRACTS',
+    'Articles' => 'Articles and abstracts',
+    'DOCTORAL' => 'FOR DOCTORAL STUDENTS',
+    'VACANCIES' => 'VACANCIES',
+    'subscribe' => 'Subscribe to news',
+    'latest' => 'Be aware of all the latest news',
+    'indicators' => 'Key indicators for March 2024',
+    'plots' => 'Land plots to business entities in industrial zones implementation analysis',
+    'loans' => 'Share of foreign direct investments and loans in YalM',
+    'enterprises' => 'Number of enterprises with foreign capital participation',
+    'products' => 'Production of plastic products',
+    'performance' => 'Key performance indicators for May 2024',
+    'thousand' => ' thousand',
+    'percent' => 'increased',
+    'all' => 'All',
+    'popular' => 'Popular articles',
+    'news_articles' => 'News articles',
+    'enter_mail' => 'Enter your E-mail',
+    'researchers'=>'The Institute of Macroeconomic and Territorial Studies invites researchers to work',
+    'candidates'=>'The following requirements increase the chances of candidates: Master`s degree or PhD in economics, finance and mathematics...',
+    'detailed' => 'Detailed',
+];

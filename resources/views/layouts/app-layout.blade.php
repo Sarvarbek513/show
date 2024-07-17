@@ -37,9 +37,6 @@
 
 @include('layouts.inc.header')
     @yield('content')
-    <div class="bg-light">
-        @yield('news')
-    </div>
 @include('layouts.inc.footer')
 
 <!-- Back to Top -->

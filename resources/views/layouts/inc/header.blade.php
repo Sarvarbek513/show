@@ -10,22 +10,55 @@
             </div>
         </div>
         <div class="col-lg-5 px-5 text-end">
-            <div class="h-100 d-inline-flex align-items-center me-3">
+            <div class="h-100 d-inline-flex align-items-center me-2">
                 <i style="color: #3b3b3b;" class="bi bi-eye-fill"></i>
             </div>
-            <div class="h-100 d-inline-flex align-items-center me-1">
+            <div class="h-100 d-inline-flex align-items-center me-3">
                 <i style="color: #3b3b3b;" class="bi bi-search"></i>
             </div>
-            <div class="h-100 d-inline-flex align-items-center me-3">
+           
+            <div class="h-100 d-inline-flex align-items-center me-1 mb-2">
                 <div class="dropdown">
-                    <button style="color: #3b3b3b;" class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        UZ
+                    <button style="color: #3b3b3b"  class="btn dropdown-toggle bg-white" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        @if(session()->get('locale', 'uz') == 'uz')
+                            <img src="{{ asset('img/uz.svg') }}" alt="" style="width: 20px; height: 20px;"> O`z
+                        @elseif(session()->get('locale') == 'en')
+                            <img src="{{ asset('img/en.svg') }}" alt="" style="width: 20px; height: 20px;"> Eng
+                        @else
+                            <img src="{{ asset('img/ru.svg') }}" alt="" style="width: 20px; height: 20px;"> Ру
+                        @endif
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">EN</a></li>
-                        <li><a class="dropdown-item" href="#">RU</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <li>
+                            <form method="POST" action="{{ route('change.language') }}">
+                                @csrf
+                                <input type="hidden" name="locale" value="uz">
+                                <button type="submit" class="dropdown-item">
+                                    <img src="{{ asset('img/uz.svg') }}" alt="" style="width: 20px; height: 20px;"> O`zbekcha
+                                </button>
+                            </form>
+                        </li>
+                        <li>
+                            <form method="POST" action="{{ route('change.language') }}">
+                                @csrf
+                                <input type="hidden" name="locale" value="en">
+                                <button type="submit" class="dropdown-item">
+                                    <img src="{{ asset('img/en.svg') }}" alt="" style="width: 20px; height: 20px;"> English
+                                </button>
+                            </form>
+                        </li>
+                        <li>
+                            <form method="POST" action="{{ route('change.language') }}">
+                                @csrf
+                                <input type="hidden" name="locale" value="ru">
+                                <button type="submit" class="dropdown-item">
+                                    <img src="{{ asset('img/ru.svg') }}" alt="" style="width: 20px; height: 20px;"> Русский
+                                </button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
+                
             </div>
             <div class="h-100 d-inline-flex align-items-center mx-n2">
                 <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
@@ -40,7 +73,7 @@
 <!-- Topbar End -->
 
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+<nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
     <a href="{{ url('') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h3 class="m-0 text-white IMRS"><b>IMRS</b></h3>
         <p style="font-size: 15px;" class="m-2"><b>Institute for Macroeconomic<br>and Regional Studies</b></p>
@@ -54,10 +87,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="{{ url('news') }}" class="nav-item nav-link {{ Request::is('news') ? 'active' : '' }}">Yangiliklar</a>
-            <a href="{{ url('about.html') }}" class="nav-item nav-link {{ Request::is('about.html') ? 'active' : '' }}">Maqola va tezislar</a>
-            <a href="{{ url('service.html') }}" class="nav-item nav-link {{ Request::is('service.html') ? 'active' : '' }}">Doktorantlar uchun</a>
-            <a href="{{ url('project.html') }}" class="nav-item nav-link {{ Request::is('project.html') ? 'active' : '' }}">Bo`sh ish o`rinlari</a>
+            <a href="{{ url('news') }}" class="nav-item nav-link {{ Request::is('news') ? 'active' : '' }}">{{ __('messages.NEWS') }}</a>
+            <a href="{{ url('maqola') }}" class="nav-item nav-link {{ Request::is('maqola') ? 'active' : '' }}">{{ __('messages.ARTICLES') }}</a>
+            <a href="{{ url('service.html') }}" class="nav-item nav-link {{ Request::is('service.html') ? 'active' : '' }}">{{ __('messages.DOCTORAL') }}</a>
+            <a href="{{ url('ish') }}" class="nav-item nav-link {{ Request::is('project.html') ? 'active' : '' }}">{{ __('messages.VACANCIES') }}</a>
             
             <!-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -74,5 +107,3 @@
     </div>
 </nav>
 <!-- Navbar End -->
-
-

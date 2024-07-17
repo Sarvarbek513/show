@@ -2,37 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use DOMDocument;
-use App\Models\News;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 
-class NewsController extends Controller
+class ArticleController extends Controller
 {
     public function index_client()
     {
-        $news = News::latest()->paginate(9);
-        return view('client.news',compact('news'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $articles = Article::latest()->paginate(9);
+        return view('client.maqola.index',compact('articles'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function index()
     {
-        $news = News::latest()->paginate(5);
-        return view('admin.news.index',compact('news'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $articles = Article::latest()->paginate(20);
+        return view('admin.maqola.index',compact('articles'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
-
     public function create()
     {
-        return view('admin.news.create');
+        return view('admin.maqola.create');
     }
-
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|max:255|string',
             'image' => 'nullable|mimes:png,jpg,jpeg,webp',
-            'description' => 'required|max:255|string',
-            'long_description' => 'required',
+            'description' => 'required',
+            'type' => 'required|max:255|string',
         ]);
     
         $filename = NULL;
@@ -44,48 +40,47 @@ class NewsController extends Controller
             if ($file) {
                 $extension = $file->getClientOriginalExtension();
                 $filename = time().'.'.$extension;
-                $path = 'upload/news/';
+                $path = 'upload/articles/';
                 $file->move($path, $filename);
             } else {
                 return redirect()->back()->with('error', 'File upload failed.');
             }
         }
     
-        News::create([
+        Article::create([
             'name' => $request->name,
             'image' => $path.$filename,
             'description' => $request->description,
-            'long_description' => $request->long_description,
+            'type' => $request->type,
         ]);
     
-        return redirect()->route('news.index')->with('success', 'News created successfully.');
+        return redirect()->route('articles.index')->with('success', 'Article created successfully.');
     }
-    
-    public function show(News $news)
+    public function show(Article $articles)
     {
-        return view('admin.news.show',compact('news'));
+        return view('admin.maqola.show',compact('articles'));
     }
     public function show_client($id)
     {
-        $news = News::findOrFail($id);
-        $news->increment('views');
-        return view('client.show',compact('news'));
+        $articles = Article::findOrFail($id);
+        // $articles->increment('views');
+        return view('client.maqola.show',compact('articles'));
     }
     public function edit($id)
     {
-        $news = News::findOrFail($id);
-        return view('admin.news.edit', compact('news'));
+        $articles = Article::findOrFail($id);
+        return view('admin.maqola.edit', compact('articles'));
     }
     public function update(Request $request, $id)
     {
         $request->validate([
             'name' => 'required|max:255|string',
             'image' => 'nullable|mimes:png,jpg,jpeg,webp',
-            'description' => 'required|max:255|string',
-            'long_description' => 'required',
+            'description' => 'required',
+            'type' => 'required',
         ]);
     
-        $news = News::findOrFail($id);
+        $news = Article::findOrFail($id);
     
         $filename = $news->image;
         $path = 'upload/news/';
@@ -111,25 +106,22 @@ class NewsController extends Controller
             'name' => $request->name,
             'image' => $path.$filename,
             'description' => $request->description,
-            'long_description' => $request->long_description,
+            'type' => $request->type,
         ]);
     
-        return redirect()->route('news.index')->with('success', 'News updated successfully.');
+        return redirect()->route('articles.index')->with('success', 'Article updated successfully.');
     }
-
     public function destroy($id)
     {
-        $news = News::findOrFail($id);
+        $articles = Article::findOrFail($id);
 
         // Delete the image if it exists
-        if ($news->image && Storage::exists($news->image)) {
-            Storage::delete($news->image);
+        if ($articles->image && Storage::exists($articles->image)) {
+            Storage::delete($articles->image);
         }
 
-        $news->delete();
+        $articles->delete();
 
-        return redirect()->route('news.index')->with('success', 'News deleted successfully.');
+        return redirect()->route('articles.index')->with('success', 'Article deleted successfully.');
     }
-
-    // Existing methods...
 }

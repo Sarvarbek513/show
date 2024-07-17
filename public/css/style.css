@@ -1,4 +1,48 @@
 /********** Template CSS **********/
+.maqola_a{
+    color: #1A2A36;
+}
+.buttonn{
+    color: #0051b4;
+    margin-left: 1%;
+}
+.inputt{
+    width: 35%;
+    margin-left: 5%;
+}
+@media (max-width: 1400px) and (min-width: 1200px) {
+    .subscribe-formm input {
+        width: 35%;
+        margin-left: 5%;
+     /* Space between input and button */
+    }
+    .subscribe-formm button {
+        width: 15%;
+    }
+}
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .subscribe-formm input {
+        width: 35%;
+        margin-left: 0%;
+     /* Space between input and button */
+    }
+    .subscribe-formm button {
+        width: 20%;
+    }
+}
+@media (max-width: 768px) {
+    .subscribe-formm input {
+        width: 57%;
+        margin-left: 0%;
+     /* Space between input and button */
+    }
+    .subscribe-formm button {
+        width: 32%;
+    }
+}
+.new-back{
+    background-color: #0051b4;    
+}
 .add-h3{
     display: flex;
     color: #5d5e5f;
@@ -51,12 +95,13 @@
     margin-left: 50%;
 }
 .img-footer{
-    width:40%;
+    width:38%;
+    margin-left: -63%;
 }
 
 @media (max-width: 1400px) {
     .img-footer{
-        width: 40%;
+        width: 38%;
     }
     .nonee{
         margin-top: 0%;
@@ -66,6 +111,7 @@
 @media (max-width: 768px) {
     .img-footer{
         width: 88%;
+        margin-left: 0%;
     }
     .nonee{
         margin-top: 0%;
@@ -75,7 +121,7 @@
 
 .hero-header {
     margin-top: -75px;
-    background: url(../img/bg-hero.png) center center no-repeat;
+    background: url(../img/111.jpg) center center no-repeat;
     background-size: cover;
 }
 hr.custom-hr {
@@ -85,13 +131,19 @@ hr.custom-hr {
     margin-top: 30px;
 }
 #hero-header{
-    background-color: #003ca4;
-    height: 904px;
+    background-color: #0051b4;
+    height: 780px;
+}
+#hero-header h2{
+    margin-top: -20%;
 }
 @media (max-width: 768px) {
     #hero-header{
         background-color: #003ca4;
         height: 565px;
+    }
+    #hero-header h2{
+       margin-top: 6%;
     }
 }
 .hero-header .breadcrumb-item+.breadcrumb-item::before {
@@ -515,18 +567,31 @@ hr.custom-hr {
 
 .portfolio-img {
     position: relative;
+    transition: box-shadow 0.3s ease-in-out;
+}
+.portfolio-img:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.portfolio-img img{
+   width: 100%;
+}
+/* .shadow-div {
+    transition: box-shadow 0.3s ease-in-out;
 }
 
+.shadow-div:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+} */
 .portfolio-img::before,
-.portfolio-img::after {
+/* .portfolio-img::after {
     position: absolute;
     content: "";
     width: 0;
     height: 100%;
     top: 0;
-    background: var(--dark);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     transition: .5s;
-}
+} */
 
 .portfolio-img::before {
     left: 50%;
@@ -728,8 +793,8 @@ hr.custom-hr {
 /*** Footer ***/
 .footer .btn.btn-social {
     margin-right: 5px;
-    color: #9B9B9B;
-    border: 1px solid #9B9B9B;
+    color: #eeeeee;
+    border: 1px solid #eeeeee;
     border-radius: 38px;
     transition: .3s;
 }
