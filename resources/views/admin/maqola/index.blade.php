@@ -54,7 +54,9 @@
                       @endforeach
                     </tbody>
                   </table>
-                  
+                  <div class="pt-5">
+                    {!! $articles->withQueryString()->links('pagination::bootstrap-5') !!} 
+                  </div>
                 </div>
               </div>
             </div>

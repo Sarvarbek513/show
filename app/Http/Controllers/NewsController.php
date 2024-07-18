@@ -10,9 +10,17 @@ use Illuminate\Support\Facades\Validator;
 
 class NewsController extends Controller
 {
+    public function index_last()
+    {
+        // Fetch the last 6 added news items, assuming 'created_at' is the timestamp column
+        $latestNews = News::orderBy('created_at', 'desc')->take(6)->get();
+
+        // Pass the news items to the view
+        return view('client.index', compact('latestNews'));
+    }
     public function index_client()
     {
-        $news = News::latest()->paginate(9);
+        $news = News::latest()->paginate(5);
         return view('client.news',compact('news'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function index()
@@ -61,8 +69,10 @@ class NewsController extends Controller
         return redirect()->route('news.index')->with('success', 'News created successfully.');
     }
     
-    public function show(News $news)
+    public function show($id)
     {
+        $news = News::findOrFail($id);
+        $news->increment('views');
         return view('admin.news.show',compact('news'));
     }
     public function show_client($id)

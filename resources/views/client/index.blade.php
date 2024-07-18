@@ -1,7 +1,7 @@
 @extends('layouts.app-layout')
 @section('content')
 <!-- Carousel Start -->
-<div id="hero-header" class="container-fluid pt-5 hero-header mb-5">
+<div id="hero-header" class="container-fluid pt-5 hero-header">
     <div class="container">
         <div class="salom p-3">
             <h6>{{ __('messages.subscribe') }}</h6>
@@ -19,19 +19,19 @@
 </div>
 <!-- Carousel End -->
     <!-- Feature Start -->
-    <div class="container-fluid bg-light py-5">
+    <div class="container-fluid bg-light py-4">
         <div class="container">
             <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-md-6 col-lg-3">
                     <div class="d-flex align-items-center mb-2">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <img src="img/investment.png" style="width: 70%;" alt="">
                         </div>
-                        <h4 style="color: #5d5e5f;" class="mb-0">15,6 %</h4>
+                        <h5 style="color: #5d5e5f;" class="mb-0">15,6 %</h5>
                     </div>
                     <span>{{ __('messages.loans') }}</span>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-md-6 col-lg-3">
                     <div class="d-flex align-items-center mb-2">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <img src="img/enterprise.png" style="width: 70%;" alt="">
@@ -40,7 +40,7 @@
                     </div>
                     <span>{{ __('messages.enterprises') }}</span>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-md-6 col-lg-3">
                     <div class="d-flex align-items-center mb-2">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <img src="img/plastic.png" style="width: 70%;" alt="">
@@ -49,7 +49,7 @@
                     </div>
                     <span>{{ __('messages.products') }}</span>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="col-md-6 col-lg-3">
                     <div class="d-flex align-items-center mb-2">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <img src="img/concept.png" style="width: 70%;" alt="">
@@ -66,10 +66,13 @@
     <!-- Projects Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h2 class="mb-4">{{ __('messages.Articles') }}</h2>
+            <div class="mb-5">
+                <h2>{{ __('messages.Articles') }}</h2>
             </div>
-            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+            {{-- <div class="text-center mx-auto mb-5 wow fadeInUp" style="max-width: 600px;">
+                <h2 class="mb-4">{{ __('messages.Articles') }}</h2>
+            </div> --}}
+            <div class="row mt-n2">
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-5" id="portfolio-flters">
                         <li class="mx-2 active" data-filter="*">{{ __('messages.all') }}</li>
@@ -78,65 +81,65 @@
                     </ul>
                 </div>
             </div>
-            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
+            <div class="row g-4 portfolio-container">
                 <div class="col-lg-4 col-md-6 portfolio-item first">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/1.png" alt="">
+                        <img class="img-fluid" src="img/GIDROGEL.png" alt="">
                     </div>
                     <div class="pt-3">
                         <p class="text-primary mb-0">{{ __('messages.popular') }}</p>
                         <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base"><a class="maqola_a" href="">Gidrogel va uning qishloq xo'jaligidagi ahamiyati</a></h5>
+                        <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/4') }}">Gidrogel va uning qishloq xo'jaligidagi ahamiyati</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item second">
                     <div class="portfolio-img shadow-div rounded overflow-hidden">
-                        <img class="img-fluid" src="img/2.jpg" alt="">
+                        <img class="img-fluid" src="img/farzand.png" alt="">
                     </div>
                     <div class="pt-3">
                         <p class="text-primary mb-0">{{ __('messages.news_articles') }}</p>
                         <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base"><a class="maqola_a" href="">Farzand tarbiyasi va kasb tanlashida ota-onalarning ishtiroki</a></h5>
+                        <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/3') }}">Farzand tarbiyasi va kasb tanlashida ota-onalarning ishtiroki</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item first">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/3.jpg" alt="">
+                        <img class="img-fluid" src="img/aholi.png" alt="">
                     </div>
                     <div class="pt-3">
                         <p class="text-primary mb-0">{{ __('messages.popular') }}</p>
                         <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base"><a class="maqola_a" href="">Aholi tomorqa yerlariga autsorsing xizmatini ko'rsatish</a></h5>
+                        <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/8') }}">Aholi tomorqa yerlariga autsorsing xizmatini ko'rsatish</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item first">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/4.jpg" alt="">
+                        <img class="img-fluid" src="img/Umumta'lim.png" alt="">
                     </div>
                     <div class="pt-3">
                         <p class="text-primary mb-0">{{ __('messages.popular') }}</p>
                         <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base"><a class="maqola_a" href="">Umumta'lim maktablaridagi davomat</a></h5>
+                        <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/4') }}">Umumta'lim maktablaridagi davomat</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item second">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/5.jpg" alt="">
+                        <img class="img-fluid" src="img/oila.png" alt="">
                     </div>
                     <div class="pt-3">
                         <p class="text-primary mb-0">{{ __('messages.news_articles') }}</p>
                         <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base"><a class="maqola_a" href="">Oilaviy tadbirkorlikni rivojlantirishning xorij tajribasi (Xitoy misolida)</a></h5>
+                        <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/3') }}">Oilaviy tadbirkorlikni rivojlantirishning xorij tajribasi (Xitoy misolida)</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item second">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/1.png" alt="">
+                        <img class="img-fluid" src="img/Yer.png" alt="">
                     </div>
                     <div class="pt-3">
                         <p class="text-primary mb-0">{{ __('messages.news_articles') }}</p>
                         <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base"><a class="maqola_a" href="">Yer islohotlari: jahon mamlakatlari tajribasi (3-qism)</a></h5>
+                        <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/8') }}">Yer islohotlari: jahon mamlakatlari tajribasi (3-qism)</a></h5>
                     </div>
                 </div>
             </div>
@@ -148,16 +151,16 @@
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container about px-lg-0">
             <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
                         <img class="position-absolute img-fluid w-100 h-100" src="img/laptop.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-lg-6 about-text py-5" >
                     <div class="p-lg-5 pe-lg-0">
                         <h1 class="mb-4">{{ __('messages.researchers') }}</h1>
                         <p>{{ __('messages.candidates') }}</p>
-                        <a href="" class="btn btn-primary rounded-pill py-2 px-4 mt-3">{{ __('messages.detailed') }}</a>
+                        <a href="{{ url('ish') }}" class="btn btn-primary rounded-pill py-2 px-4 mt-3">{{ __('messages.detailed') }}</a>
                     </div>
                 </div>
             </div>
@@ -168,82 +171,22 @@
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h2 class="mb-4">Yangiliklar</h2>
+            <div class="mb-5">
+                <h2>Yangiliklar</h2>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                @foreach($latestNews as $latestNew)
+                <div class="col-md-6 col-lg-4">
                     <div class="service-item div-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/new1.png" alt="">
+                        <img style="width:100%" class="img-fluid" src="{{ $latestNew->image}}" alt="">
                         <div class="position-relative p-4 pt-0">
-                            <h4 class="mt-5 mb-3">2024-yil Mart oyi faoliyatining asosiy ko'rsatkichlari</h4>
-                            <p>MART oyida olib borilgan
-                                tadqiqotlarning natijalari bilan
-                                tanishishingiz mumkin</p>
-                            <a class="small fw-medium" href="">Batafsil<i class="fa fa-arrow-right ms-2"></i></a>
+                            <h4 class="mt-5 mb-3">{{ $latestNew->name}}</h4>
+                            <p>{{ $latestNew->description }}</p>
+                            <a class="small fw-medium" href="{{ url('news',$latestNew->id) }}">Batafsil<i class="fa fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item div-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/new_may.png" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <h4 class="mt-5 mb-3">2024-yil May oyi faoliyatining asosiy ko'rsatkichlari</h4>
-                            <p>MAY oyida olib borilgan
-                                tadqiqotlarning natijalari bilan
-                                tanishishingiz mumkin</p>
-                            <a class="small fw-medium" href="">Batafsil<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item div-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/new_fev.png" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <h4 class="mt-5 mb-3">2024-yil Fevral oyi faoliyatining asosiy ko'rsatkichlari</h4>
-                            <p>FEVRAL oyida olib borilgan
-                                tadqiqotlarning natijalari bilan
-                                tanishishingiz mumkin</p>
-                            <a class="small fw-medium" href="">Batafsil<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item div-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/new_ap.png" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <h4 class="mt-5 mb-3">2024-yil Aprel oyi faoliyatining asosiy ko'rsatkichlari</h4>
-                            <p>APREL oyida olib borilgan
-                                tadqiqotlarning natijalari bilan
-                                tanishishingiz mumkin</p>
-                            <a class="small fw-medium" href="">Batafsil<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item div-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/new_noy.png" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <h4 class="mt-5 mb-3">2024-yil Noyabr oyi faoliyatining asosiy ko'rsatkichlari</h4>
-                            <p>NOYABR oyida olib borilgan
-                                tadqiqotlarning natijalari bilan
-                                tanishishingiz mumkin</p>
-                            <a class="small fw-medium" href="">Batafsil<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item div-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/new_ok.png" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <h4 class="mt-5 mb-3">2024-yil Oktabr oyi faoliyatining asosiy ko'rsatkichlari</h4>
-                            <p>OKTABR oyida olib borilgan
-                                tadqiqotlarning natijalari bilan
-                                tanishishingiz mumkin</p>
-                            <a class="small fw-medium" href="">Batafsil<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -253,7 +196,7 @@
 
     <!-- Newsletter Start -->
     <div class="container-fluid" style="background-color: #0051b4">
-        <div style="display: flex;align-items: center;flex-wrap: wrap;" class="container p-5 px-3 subscribe-formm">
+        <div style="display: flex;align-items: center;flex-wrap: wrap;height:12em" class="container px-3 subscribe-formm">
             <h4 style="color: white">
                 Yangiliklardan xabardor bo'lish uchun bizga obuna bo'ling.
             </h4>
@@ -264,10 +207,13 @@
      <!-- Testimonial Start -->
      <div class="container-xxl pt-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h2 class="mb-4">Tadqiqot yo`nalishlari</h2>
+            <div class="mb-5">
+                <h2>Tadqiqot yo`nalishlari</h2>
             </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            {{-- <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h2 class="mb-4">Tadqiqot yo`nalishlari</h2>
+            </div> --}}
+            <div class="owl-carousel testimonial-carousel ">
                 <div class="testimonial-item text-center">
                     <div class="testimonial-img position-relative">
                         <img class="img-fluid rounded-circle mx-auto mb-5" src="img/macroeconomics.png">

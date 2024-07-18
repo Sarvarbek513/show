@@ -25,7 +25,6 @@
                         <th> Image </th>
                         <th> Name </th>
                         {{-- <th> Long Description </th> --}}
-                        <th> Description </th>
                         <th> Action </th>
                       </tr>
                     </thead>
@@ -36,7 +35,7 @@
                         <td><img src="{{ asset($new->image) }}" width="150" height="100"></td>
                         <td>{!! $new->name !!}</td>
                         {{-- <td>{!! $new->long_description !!}</td> --}}
-                        <td>{!! $new->description !!}</td>
+                        {{-- <td>{!! $new->description !!}</td> --}}
                         <td> <form action="{{ route('news.destroy',$new->id) }}" method="POST">
 
                             <a class="btn btn-dark" href="{{ route('news.show',$new->id) }}">Show</a>
@@ -52,7 +51,9 @@
                       @endforeach
                     </tbody>
                   </table>
-                  
+                  <div class="pt-5">
+                  {!! $news->withQueryString()->links('pagination::bootstrap-5') !!} 
+                  </div>
                 </div>
               </div>
             </div>

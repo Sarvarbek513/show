@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="col-md-8">
-            <div class="container bg-white p-4 px-5">
+            <div style="box-shadow: 0 0 45px rgba(0, 0, 0, .08);" class="container bg-white p-4 px-5">
                 <div style="display: grid; justify-content: end;">
                     <div>
                       <i class="fa fa-share-alt mx-2"></i>

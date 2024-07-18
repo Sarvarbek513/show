@@ -1,4 +1,60 @@
 /********** Template CSS **********/
+/* .nav_in{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+.nav_in input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+.fa-icon{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #8c52ff;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+.nav_in:hover{
+    width: 300px;
+    cursor: pointer;
+}
+
+.nav_in:hover input{
+    display: block;
+}
+
+.nav_in:hover .fa{
+    background: #8c52ff;
+    color: white;
+} */
+
 .maqola_a{
     color: #1A2A36;
 }
@@ -121,7 +177,7 @@
 
 .hero-header {
     margin-top: -75px;
-    background: url(../img/111.jpg) center center no-repeat;
+    background: url(../img/rasm.jpg) center center no-repeat;
     background-size: cover;
 }
 hr.custom-hr {
@@ -131,8 +187,7 @@ hr.custom-hr {
     margin-top: 30px;
 }
 #hero-header{
-    background-color: #0051b4;
-    height: 780px;
+    height: 814px;
 }
 #hero-header h2{
     margin-top: -20%;

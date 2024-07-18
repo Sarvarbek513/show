@@ -8,7 +8,7 @@
     </div>
   </div>
   <!-- Service Start -->
-  <div class="container-xxl py-5">
+  {{-- <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h2 class="mb-4">Yangiliklar</h2>
@@ -21,7 +21,6 @@
                         <div class="position-relative p-4 pt-0">
                             <h4 class="mt-5 mb-3">{{ $new->name }}</h4>
                             <p>{{ $new->description}}</p>
-                            {{-- <a class="btn btn-dark" href="{{ route('news.show',$new->id) }}">Show</a> --}}
                             <a class="small fw-medium" href="{{ url('news',$new->id) }}">Batafsil<i class="fa fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
@@ -31,6 +30,38 @@
         {!! $news->withQueryString()->links('pagination::bootstrap-5') !!}
     </div>
    
+</div> --}}
+
+<div class="container-fluid bg-light py-5">
+    <div class="container">
+        <div style="display:flex;align-items:center;box-shadow: 0 0 40px rgba(0, 0, 0, .08);" class="bg-white p-3">
+            <h2>Yangiliklar</h2>
+        </div>
+        @foreach ($news as $new)
+        <div style="box-shadow: 0 0 40px rgba(0, 0, 0, .08);" class="bg-white p-4 mt-4">
+            <div style="display: flex">
+                <img class="m-2" style="width: 236px;height: 140px;" src="{{ asset($new->image) }}" width="20%">
+                {{-- <p class="mt-3">
+                    2023-yil noyabr oyi faoliyatning asosiy ko'rsatkichlari <br>
+                    <p>Sa</p>
+
+                </p> --}}
+                <div class="mt-3">
+                    <p style="color: black;font-size:24px"><a href="{{ url('news',$new->id) }}">{{ $new->name }}</a></p>
+                    <div style="display: flex">
+                        <p><i class="fa fa-clock"></i> {{ $new->created_at }}</p>
+                        <p class="mx-5"><i class="fa fa-eye"></i> {{ $new->views }}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        @endforeach
+        <div class="pt-4">
+            {!! $news->withQueryString()->links('vendor.pagination.bootstrap-5') !!}
+        </div>
+    </div>
+  
 </div>
 <!-- Service End -->
 @endsection

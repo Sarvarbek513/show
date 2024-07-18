@@ -9,7 +9,8 @@
 </div>
 
 <div class="container-fluid bg-light grid-margin stretch-card p-5">
-  <div class="container bg-white p-4 px-5">
+  <div style="box-shadow: 0 0 45px rgba(0, 0, 0, .08);" class="container bg-white p-4 px-5">
+    <div style="display: flex;float:right"><a style="font-size: 19px" href="/download/780733.pdf"><i class="fa fa-download"></i> Yuklab olish</a></div>
       {!!  $news->long_description  !!}
       <p><strong><i class="fa fa-eye"></i></strong> {{ $news->views }}</p>
   </div>

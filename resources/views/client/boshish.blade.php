@@ -12,9 +12,9 @@
        
     </div> --}}
     <div class="container">
-        <h3 class="pb-5">Bo`sh ish o`rinlari</h3>
+        <h3 class="pb-4">Bo`sh ish o`rinlari</h3>
         <p>4 mart, 2024</p> 
-        <div class="p-5">
+        <div class="p-5 pt-0">
             <b style="color: black">Vazifalar:</b>
             <p class="pb-3" style="color: black;width:85%;">Mamlakatda bozor mexanizmlarini keng qo'llash, tadbirkorlikni rivojlantirish, investitsiya faoliyatini va raqamli
                 iqtisodiyotni faollashtirish, inflyatsion jarayonlarni tahlil qilish, Yer islohatlariga oid zamonaviy bozor mexanizmlarini
@@ -71,7 +71,6 @@
                     <p style="margin-left: 42%;color: black">1</p>
                     <p style="margin-left: 43%;color: black">vakant</p>
                 </div>
-        
         </div>   
     </div>
   </div>

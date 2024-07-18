@@ -89,7 +89,7 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="{{ url('news') }}" class="nav-item nav-link {{ Request::is('news') ? 'active' : '' }}">{{ __('messages.NEWS') }}</a>
             <a href="{{ url('maqola') }}" class="nav-item nav-link {{ Request::is('maqola') ? 'active' : '' }}">{{ __('messages.ARTICLES') }}</a>
-            <a href="{{ url('service.html') }}" class="nav-item nav-link {{ Request::is('service.html') ? 'active' : '' }}">{{ __('messages.DOCTORAL') }}</a>
+            <a href="{{ url('doktarants') }}" class="nav-item nav-link {{ Request::is('doktarants') ? 'active' : '' }}">{{ __('messages.DOCTORAL') }}</a>
             <a href="{{ url('ish') }}" class="nav-item nav-link {{ Request::is('project.html') ? 'active' : '' }}">{{ __('messages.VACANCIES') }}</a>
             
             <!-- <div class="nav-item dropdown">

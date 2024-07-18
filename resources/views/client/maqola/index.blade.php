@@ -10,10 +10,10 @@
     <!-- Projects Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h2 class="mb-4">{{ __('messages.Articles') }}</h2>
+            <div class="text-center mx-auto mb-5 wow fadeInUp"  style="max-width: 600px;">
+                {{-- <h2 class="mb-4">{{ __('messages.Articles') }}</h2> --}}
             </div>
-            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
+            <div class="row g-4 portfolio-container" >
                 @foreach ($articles as $article)
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-img shadow-div rounded overflow-hidden">
@@ -27,7 +27,9 @@
                 </div>
                 @endforeach
             </div>
-            {!! $articles->withQueryString()->links('pagination::bootstrap-5') !!}
+            <div class="pt-5">
+            {!! $articles->withQueryString()->links('vendor.pagination.bootstrap-5') !!}
+            </div>
         </div>
     </div>
     <!-- Projects End -->
