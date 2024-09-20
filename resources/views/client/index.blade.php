@@ -6,13 +6,15 @@
         <div class="salom p-3">
             <h6>{{ __('messages.subscribe') }}</h6>
             <p style="margin-top: -2%;font-size: 14px;">{{ __('messages.latest') }}</p>
-            <input type="text" placeholder="{{ __('messages.enter_mail') }}" class="input_email form-control">
+            <input type="text" placeholder="{{ __('messages.enter_mail') }}" class="input_email form-control" style="border-radius: 8px">
         </div>
         <div class="row justify-content-start">
             <div id="col-margin" class="col-10 col-lg-8">
-                <h2 class="text-dark animated slideInDown">{{ __('messages.indicators') }}</h2>
-                <p class="fs-5 fw-medium text-dark mb-4 pb-3">{{ __('messages.plots') }}</p>
-                <button class="btn btn-primary p-4 pb-2 pt-2">{{ __('messages.detailed') }}</button>
+                <form action="{{ url('news/18') }}">
+                    <h2 class="text-dark animated slideInDown">{{ __('messages.indicators') }}</h2>
+                    <p class="fs-5 fw-medium text-dark mb-4 pb-3">{{ __('messages.plots') }}</p>
+                    <button class="btn btn-primary p-4 pb-2 pt-2">{{ __('messages.detailed') }}</button>
+                </form>
             </div>
         </div>
     </div>
@@ -82,7 +84,7 @@
                 </div>
             </div>
             <div class="row g-4 portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item first">
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeIn" data-wow-delay="0.1s">
                     <div class="portfolio-img rounded overflow-hidden">
                         <img class="img-fluid" src="img/GIDROGEL.png" alt="">
                     </div>
@@ -92,7 +94,7 @@
                         <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/4') }}">Gidrogel va uning qishloq xo'jaligidagi ahamiyati</a></h5>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeIn" data-wow-delay="0.1s">
                     <div class="portfolio-img shadow-div rounded overflow-hidden">
                         <img class="img-fluid" src="img/farzand.png" alt="">
                     </div>
@@ -102,7 +104,7 @@
                         <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/3') }}">Farzand tarbiyasi va kasb tanlashida ota-onalarning ishtiroki</a></h5>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeIn" data-wow-delay="0.1s">
                     <div class="portfolio-img rounded overflow-hidden">
                         <img class="img-fluid" src="img/aholi.png" alt="">
                     </div>
@@ -112,7 +114,7 @@
                         <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/8') }}">Aholi tomorqa yerlariga autsorsing xizmatini ko'rsatish</a></h5>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeIn" data-wow-delay="0.1s">
                     <div class="portfolio-img rounded overflow-hidden">
                         <img class="img-fluid" src="img/Umumta'lim.png" alt="">
                     </div>
@@ -122,7 +124,7 @@
                         <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/4') }}">Umumta'lim maktablaridagi davomat</a></h5>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeIn" data-wow-delay="0.1s">
                     <div class="portfolio-img rounded overflow-hidden">
                         <img class="img-fluid" src="img/oila.png" alt="">
                     </div>
@@ -132,7 +134,7 @@
                         <h5 class="lh-base"><a class="maqola_a" href="{{ url('/articles/3') }}">Oilaviy tadbirkorlikni rivojlantirishning xorij tajribasi (Xitoy misolida)</a></h5>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeIn" data-wow-delay="0.1s">
                     <div class="portfolio-img rounded overflow-hidden">
                         <img class="img-fluid" src="img/Yer.png" alt="">
                     </div>
@@ -172,7 +174,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="mb-5">
-                <h2>Yangiliklar</h2>
+                <h2>{{ __('messages.NEWS') }}</h2>
             </div>
             <div class="row g-4">
                 @foreach($latestNews as $latestNew)
@@ -197,18 +199,18 @@
     <!-- Newsletter Start -->
     <div class="container-fluid" style="background-color: #0051b4">
         <div style="display: flex;align-items: center;flex-wrap: wrap;height:12em" class="container px-3 subscribe-formm">
-            <h4 style="color: white">
-                Yangiliklardan xabardor bo'lish uchun bizga obuna bo'ling.
-            </h4>
-            <input class="form-control inputt" type="email" placeholder="Pochta manzilingiz kiriting..">
-            <button class="btn bg-white buttonn" type="submit">Obuna bo'lish</button>
+            <h5 style="color: white">
+                {{ __('messages.news_detailed') }}
+            </h5>
+            <input class="form-control inputt" style="border-radius: 8px" type="email" placeholder="{{ __('messages.email') }}">
+            <button class="btn bg-white buttonn" type="submit">{{ __('messages.subscribe') }}</button>
         </div>
     </div>
      <!-- Testimonial Start -->
      <div class="container-xxl pt-5">
         <div class="container">
             <div class="mb-5">
-                <h2>Tadqiqot yo`nalishlari</h2>
+                <h2>{{ __('messages.directions') }}</h2>
             </div>
             {{-- <div class="text-center mx-auto mb-5" style="max-width: 600px;">
                 <h2 class="mb-4">Tadqiqot yo`nalishlari</h2>

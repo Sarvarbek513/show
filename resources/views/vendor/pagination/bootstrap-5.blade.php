@@ -7,7 +7,7 @@
                     $to = $paginator->lastItem();
                     $total = $paginator->total();
                 @endphp
-                {{ __('pagination.showing', ['from' => $from, 'to' => $to, 'total' => $total]) }}
+                {{-- {{ __('pagination.showing', ['from' => $from, 'to' => $to, 'total' => $total]) }} --}}
             </div>
         </div>
         <div class="col-md-6">

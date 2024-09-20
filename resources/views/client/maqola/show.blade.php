@@ -26,18 +26,44 @@
             </div>
         </div>
         <div class="col-md-8">
-            <div style="box-shadow: 0 0 45px rgba(0, 0, 0, .08);" class="container bg-white p-4 px-5">
+            <div style="box-shadow: 0 0 45px rgba(0, 0, 0, .08);" class="container bg-white p-4 px-4">
                 <div style="display: grid; justify-content: end;">
                     <div>
-                      <i class="fa fa-share-alt mx-2"></i>
-                      <i class="fa fa-print mx-2"></i>
-                      <i class="fa fa-cloud mx-2"></i>
+                        <a id="shareIcon" class="mx-2" style="cursor: pointer;"><i id="shareIcon" class="fa fa-share-alt share-icon"></i></a>
+                        <a class="mx-2" style="cursor: pointer;"><i class="fa fa-print mx-2" onclick="window.print()" style="cursor: pointer;"></i></a>
                     </div>
-                  </div>
-                {!!  $articles->description  !!}
-                {{-- <p><strong><i class="fa fa-eye"></i></strong> {{ $news->views }}</p> --}}
+                </div>
+                {!! $articles->description !!}
+                <div class="container">
+                    <div class="social-icons" style="display: flex; justify-content: right; gap: 5px;">
+                        <a href="https://vk.com/share.php?url={{ urlencode(request()->fullUrl()) }}" target="_blank" class="vk" title="VK"><i class="fab fa-vk"></i></a>
+                        <a href="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl={{ urlencode(request()->fullUrl()) }}" target="_blank" class="odnoklassniki" title="Odnoklassniki"><i class="fab fa-odnoklassniki"></i></a>
+                        <a href="https://t.me/share/url?url={{ urlencode(request()->fullUrl()) }}" target="_blank" class="telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->fullUrl()) }}&text=Check out this awesome page!" target="_blank" class="x" title="X"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Web Share API Script -->
+<script>
+    document.getElementById('shareIcon').addEventListener('click', async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: document.title,
+                    text: 'Check out this awesome page!',
+                    url: window.location.href
+                });
+                console.log('Successfully shared');
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        } else {
+            alert('Web Share API is not supported in your browser.');
+        }
+    });
+</script>
 @endsection

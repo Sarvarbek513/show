@@ -8,7 +8,6 @@
                 <div class="d-flex pt-2 d-flex2">
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
@@ -19,7 +18,7 @@
         <div class="row g-5">
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                 <h5 class="text-white mb-4">Ishlarimizni o‘rganing</h5>
-                <a class="text-white btn" href="#">Mehnat bozori holati</a>
+                <a class="text-white btn btn-link" href="#">Mehnat bozori holati</a>
                 <a class="text-white btn btn-link" href="#">Talab yuqori bo‘lgan kasblar</a>
                 <a class="text-white btn btn-link" href="#">Yuqori oylik maosh</a>
                 <a class="text-white btn btn-link" href="#">Ishchi kuchi talabi prognozi</a>

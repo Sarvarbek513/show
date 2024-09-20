@@ -1,4 +1,39 @@
+<style>
+  .form-control {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  padding-right: 0; }
+  .form-control:active, .form-control:focus, .form-control:hover {
+    border-bottom: 1px solid #3b3b3b;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none; }
+</style>
 <!-- Topbar Start -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: rgb(0 0 0 / 85%);" >
+    <div class="modal-dialog">
+        <div style="background-color: rgb(0 0 0 / 0%);" class="modal-content">
+            <div class="modal-body">
+                <h4 class="modal-title mb-5 text-center text-white" id="exampleModalLabel">Nima qidiryapsiz?</h4>
+                <i data-bs-dismiss="modal" style="font-size: 20px;color: #1363c6;cursor: pointer;" class="fa-solid fa-rectangle-xmark position-absolute top-0 end-0 m-3"></i>
+                <form action="" method="get">
+                    <div class="form-group mb-4">
+                      <input type="text" class="form-control text-center" placeholder="Qidirish" style="background-color: #ffffff00;">
+                    </div>
+  
+                    <div class="d-flex">
+                      <div class="mx-auto">
+                      <a href="" class="btn btn-primary">Jo`natish</a>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 <div class="container-fluid bg-light p-0">
     <div class="row gx-0 d-none d-lg-flex">
         <div class="col-lg-7 px-5 text-start">
@@ -10,16 +45,18 @@
             </div>
         </div>
         <div class="col-lg-5 px-5 text-end">
-            <div class="h-100 d-inline-flex align-items-center me-2">
+            {{-- <div class="h-100 d-inline-flex align-items-center me-2">
                 <i style="color: #3b3b3b;" class="bi bi-eye-fill"></i>
-            </div>
+            </div> --}}
             <div class="h-100 d-inline-flex align-items-center me-3">
-                <i style="color: #3b3b3b;" class="bi bi-search"></i>
+                <a  type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" class="case-overlay text-decoration-none" href="">
+                    <i style="color: #9ba0aa;" class="fa fa-search"></i>
+                </a>
             </div>
            
             <div class="h-100 d-inline-flex align-items-center me-1 mb-2">
                 <div class="dropdown">
-                    <button style="color: #3b3b3b"  class="btn dropdown-toggle bg-white" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button style="color: #9ba0aa;margin-top:-7.5%"  class="btn dropdown-toggle bg-white" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                         @if(session()->get('locale', 'uz') == 'uz')
                             <img src="{{ asset('img/uz.svg') }}" alt="" style="width: 20px; height: 20px;"> O`z
                         @elseif(session()->get('locale') == 'en')
@@ -61,9 +98,9 @@
                 
             </div>
             <div class="h-100 d-inline-flex align-items-center mx-n2">
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="https://www.facebook.com/imrspress"><i class="fab fa-facebook-f"></i></a>
                 <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="https://www.linkedin.com/company/institute-of-forecasting-and-macroeconomic-research/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
                 <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
             </div>
         </div>
@@ -75,8 +112,8 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
     <a href="{{ url('') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-        <h3 class="m-0 text-white IMRS"><b>IMRS</b></h3>
-        <p style="font-size: 15px;" class="m-2"><b>Institute for Macroeconomic<br>and Regional Studies</b></p>
+        <img class="header-imgg" src="{{ asset('img/screen.png') }}">
+        <p class="m-2 header-pp"><b>Institute for Macroeconomic<br>and Regional Studies</b></p>
     </a>
     <!-- <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 text-primary"><img style="width: 52%;" src="img/result_logo.png" alt=""></h2>
@@ -87,11 +124,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="{{ url('news') }}" class="nav-item nav-link {{ Request::is('news') ? 'active' : '' }}">{{ __('messages.NEWS') }}</a>
-            <a href="{{ url('maqola') }}" class="nav-item nav-link {{ Request::is('maqola') ? 'active' : '' }}">{{ __('messages.ARTICLES') }}</a>
-            <a href="{{ url('doktarants') }}" class="nav-item nav-link {{ Request::is('doktarants') ? 'active' : '' }}">{{ __('messages.DOCTORAL') }}</a>
-            <a href="{{ url('ish') }}" class="nav-item nav-link {{ Request::is('project.html') ? 'active' : '' }}">{{ __('messages.VACANCIES') }}</a>
-            
+            <a href="{{ url('news') }}" class="nav-item nav-link {{ Request::is('news') || Request::is('news/*') ? 'active' : '' }}">{{ __('messages.NEWS') }}</a>
+            <a href="{{ url('maqola') }}" class="nav-item nav-link {{ Request::is('maqola') || Request::is('articles/*') ? 'active' : '' }}">{{ __('messages.ARTICLES') }}</a>
+            <a href="{{ url('journals') }}" class="nav-item nav-link {{ Request::is('journals') || Request::is('journals/*') ? 'active' : '' }} ">{{ __('messages.jurnal') }}</a>
+            <a href="{{ url('doktarants') }}" class="nav-item nav-link {{ Request::is('doktarants') || Request::is('doktarants/*') ? 'active' : '' }}">{{ __('messages.DOCTORAL') }}</a>
+            <a href="{{ url('ish') }}" class="nav-item nav-link {{ Request::is('ish') ? 'active' : '' }}">{{ __('messages.VACANCIES') }}</a>
             <!-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu bg-light m-0">

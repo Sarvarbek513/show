@@ -41,33 +41,44 @@ class NewsController extends Controller
             'image' => 'nullable|mimes:png,jpg,jpeg,webp',
             'description' => 'required|max:255|string',
             'long_description' => 'required',
+            'pdf' => 'nullable|mimes:pdf|max:10000',
         ]);
-    
-        $filename = NULL;
-        $path = NULL;
-    
-        if($request->hasFile('image')) {
-            $file = $request->file('image');
-    
-            if ($file) {
-                $extension = $file->getClientOriginalExtension();
-                $filename = time().'.'.$extension;
-                $path = 'upload/news/';
-                $file->move($path, $filename);
-            } else {
-                return redirect()->back()->with('error', 'File upload failed.');
-            }
+
+        $imagePath = NULL;
+        $pdfPath = NULL;
+
+        // Handle Image Upload
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageExtension = $image->getClientOriginalExtension();
+            $imageFilename = time() . '_image.' . $imageExtension;
+            $imagePath = 'upload/news/image/';
+            $image->move($imagePath, $imageFilename);
+            $imagePath = $imagePath . $imageFilename;
         }
-    
+
+        // Handle PDF Upload
+        if ($request->hasFile('pdf')) {
+            $pdf = $request->file('pdf');
+            $pdfExtension = $pdf->getClientOriginalExtension();
+            $pdfFilename = time() . '_pdf.' . $pdfExtension;
+            $pdfPath = 'upload/news/pdf/';
+            $pdf->move($pdfPath, $pdfFilename);
+            $pdfPath = $pdfPath . $pdfFilename;
+        }
+
+        // Create News record
         News::create([
             'name' => $request->name,
-            'image' => $path.$filename,
+            'image' => $imagePath,
             'description' => $request->description,
             'long_description' => $request->long_description,
+            'pdf' => $pdfPath,
         ]);
-    
+
         return redirect()->route('news.index')->with('success', 'News created successfully.');
     }
+
     
     public function show($id)
     {
@@ -139,6 +150,18 @@ class NewsController extends Controller
         $news->delete();
 
         return redirect()->route('news.index')->with('success', 'News deleted successfully.');
+    }
+    public function downloadPDF($id)
+    {
+        // Retrieve the news item by ID
+        $news = News::findOrFail($id);
+    
+        // Check if the PDF exists
+        if ($news->pdf && file_exists(public_path($news->pdf))) {
+            return response()->download(public_path($news->pdf));
+        }
+    
+        return redirect()->back()->with('error', 'PDF file not found.');
     }
 
     // Existing methods...

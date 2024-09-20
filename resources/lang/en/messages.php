@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'NEWS' => 'NEWS',
+    'NEWS' => 'News',
     'ARTICLES' => 'ARTICLES AND ABSTRACTS',
     'Articles' => 'Articles and abstracts',
     'DOCTORAL' => 'FOR DOCTORAL STUDENTS',
@@ -23,4 +23,9 @@ return [
     'researchers'=>'The Institute of Macroeconomic and Territorial Studies invites researchers to work',
     'candidates'=>'The following requirements increase the chances of candidates: Master`s degree or PhD in economics, finance and mathematics...',
     'detailed' => 'Detailed',
+    'news_detailed'=>'Subscribe to us to keep up with the news.',
+    'email'=>'Enter your email address..',
+    'subscribe'=>'Subscribe',
+    'directions'=>'Research directions',
+    'jurnal'=>'Journal'
 ];

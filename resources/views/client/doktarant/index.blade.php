@@ -8,36 +8,38 @@
     </div>
   </div>
   <!-- Service Start -->
-<div class="container-fluid bg-light py-5">
+  <div class="container-fluid bg-light py-5">
     <div class="container">
-        <div style="display:flex;align-items:center;box-shadow: 0 0 40px rgba(0, 0, 0, .08);" class="bg-white p-3">
+        <div class="bg-white p-3 shadow-sm d-flex align-items-center">
             <h2>Doktarantlar uchun</h2>
         </div>
-        @foreach ($doktarants as $doktarant)
-        <div style="box-shadow: 0 0 40px rgba(0, 0, 0, .08);" class="bg-white p-4 mt-4">
-            <div style="display: flex">
-                <img class="m-2" style="width: 236px;height: 155px;" src="{{ $doktarant->image }}" width="20%">
-                {{-- <p class="mt-3">
-                    2023-yil noyabr oyi faoliyatning asosiy ko'rsatkichlari <br>
-                    <p>Sa</p>
 
-                </p> --}}
-                <div class="mt-3">
-                    <p style="color: black;font-size:24px"><a href="{{ url('doktarants',$doktarant->id) }}">{{ $doktarant->name }}</a></p>
-                    <div style="display: flex">
-                        <p><i class="fa fa-clock"></i> {{ $doktarant->created_at }}</p>
-                        <p class="mx-5"><i class="fa fa-eye"></i> {{ $doktarant->views }}</p>
+        @foreach ($doktarants as $doktarant)
+        <div class="bg-white p-4 mt-4 shadow-sm">
+            <div class="d-flex flex-column flex-md-row">
+                <img class="m-2 img_dokt" src="{{ $doktarant->image }}" alt="{{ $doktarant->name }}">
+                
+                <div class="align-items-center mt-3 mt-md-0 ml-md-3">
+                    <p class="text-dark pt-3" style="font-size: 24px;">
+                        <a href="{{ url('doktarants', $doktarant->id) }}">{{ $doktarant->name }}</a>
+                    </p>
+                    
+                    <!-- Moved the div below the name -->
+                    <div class="d-flex flex-column flex-md-row">
+                        <p class="mb-2 mb-md-0"><i class="fa fa-clock"></i> {{ $doktarant->created_at }}</p>
+                        <p class="mx-md-5"><i class="fa fa-eye"></i> {{ $doktarant->views }}</p>
                     </div>
                 </div>
+                
             </div>
-            
         </div>
         @endforeach
-        <div class="pt-5">
+
+        {{-- <div class="pt-5">
             {!! $doktarants->withQueryString()->links('vendor.pagination.bootstrap-5') !!}
-        </div>
+        </div> --}}
     </div>
-  
 </div>
+
 <!-- Service End -->
 @endsection

@@ -1,4 +1,9 @@
-/********** Template CSS **********/
+********* Template CSS *********
+/* 
+width: 22%;
+font-size: 9px;
+height: 20%; */
+
 /* .nav_in{
     position: relative;
     top: 50%;
@@ -54,7 +59,193 @@
     background: #8c52ff;
     color: white;
 } */
+.social-icons {
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+  }
+  .social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .vk { background-color: #4680C2; }
+  .odnoklassniki { background-color: #F48421; }
+  .telegram { background-color: #2AABEE; }
+  .x { background-color: #000000; }
+.custom-card-journal {
+    text-align: center;
+  }
+  .custom-card-journal img {
+    width: 100%;
+    height: 38vh;
+  }
+  .custom-card-journal p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+.d-flexx {
+    display: flex;
+    width: 100%; /* Ensure the div takes full width */
+}
 
+.justify-content-betweenn {
+    justify-content: space-between;
+}
+
+.align-items-centerr {
+    align-items: center;
+}
+
+.left {
+    text-align: left;
+    flex: 1; /* This ensures that the left paragraph takes up space on the left */
+    color: black
+}
+
+.middle {
+    text-align: center;
+    flex: 1; /* This ensures the middle paragraph is centered */
+    color: black
+}
+
+.right {
+    text-align: right;
+    flex: 1; /* This ensures that the right paragraph takes up space on the right */
+    color: black
+}
+.chat-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.chat-body {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+.chat-footer {
+    padding: 10px;
+}
+.chat-footer input {
+    width: 100%;
+}
+ .new_pp{
+    color: black;
+    font-size:24px
+ }
+.header-imgg{
+    width:109px;
+}
+.header-pp{
+    font-size: 15px;
+}
+.img_dokt {
+    width: 305px;  /* Set a fixed width */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the set dimensions without distortion */
+}
+#bosh_ish1{
+    margin-left: 35%;
+}
+#bosh_ish2{
+    margin-left: 41%;
+}
+#bosh_ish_p2{
+    margin-left: 42%;
+    color: black
+}
+#bosh_ish_p3{
+    margin-left: 43%;
+    color: black
+}
+.img_news{
+    width: 305px;  /* Set a fixed width */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the set dimensions without distortion */
+}
+@media (max-width: 400px) {
+   /* .bosh_ish{
+    margin: -55px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+   }  */
+   .img_dokt{
+    width: 200px;
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: cover; 
+   }
+}
+@media (max-width: 768px) {
+    #bosh_ish1{
+        margin-left: 10%;
+    }
+    #bosh_ish2{
+        margin-left: 12%;
+    }
+    #bosh_ish_p2{
+        margin-left: 22%;
+    }
+    #bosh_ish_p3{
+        margin-left: 20%;
+    }
+    /* .img_dokt{
+        width: 233px;
+        height: 126px;
+        padding-top: 10%;
+     } */
+     /* .img_news{
+        padding-top: 11%;
+        width: 27%;
+        height: 10%;
+    } */
+    .header-imgg{
+        width:75px;
+    }
+    .header-pp{
+        font-size: 10px;
+    }
+    /* .new_pp{
+        color: black;
+        font-size:15px
+     } */
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    #bosh_ish1{
+        margin-left: 30%;
+    }
+    #bosh_ish2{
+        margin-left: 33%;
+    }
+    #bosh_ish_p2{
+        margin-left: 36%;
+    }
+    #bosh_ish_p3{
+        margin-left: 39%;
+    }
+}
 .maqola_a{
     color: #1A2A36;
 }
@@ -65,6 +256,7 @@
 .inputt{
     width: 35%;
     margin-left: 5%;
+    border-radius: 8px
 }
 @media (max-width: 1400px) and (min-width: 1200px) {
     .subscribe-formm input {
@@ -93,7 +285,7 @@
      /* Space between input and button */
     }
     .subscribe-formm button {
-        width: 32%;
+        width: 42%;
     }
 }
 .new-back{
@@ -187,7 +379,7 @@ hr.custom-hr {
     margin-top: 30px;
 }
 #hero-header{
-    height: 814px;
+    height: 51em;
 }
 #hero-header h2{
     margin-top: -20%;
@@ -195,7 +387,7 @@ hr.custom-hr {
 @media (max-width: 768px) {
     #hero-header{
         background-color: #003ca4;
-        height: 565px;
+        height: 750px;
     }
     #hero-header h2{
        margin-top: 6%;

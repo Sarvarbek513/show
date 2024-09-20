@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'NEWS' => 'YANGILIKLAR',
+    'NEWS' => 'Yangiliklar',
     'ARTICLES' => 'MAQOLA VA TEZISLAR',
     'Articles' => 'Maqolalar va tezislar',
     'DOCTORAL' => 'DOKTORANTLAR UCHUN',
@@ -23,4 +23,10 @@ return [
     'researchers'=>'Makroiqtisodiy va hududiy tadqiqotlar instituti ilmiy-tadqiqotchilarni ishga taklif qiladi',
     'candidates'=>'Quyidagi talablar nomzodlar imkoniyatini oshiradi: Iqtisodiyot moliya va matematika yo`nalishlarida magistratura yoki PhD darajasiga ega bo`lish...',
     'detailed' => 'Batafsil',
+    'news_detailed'=>'Yangiliklardan xabardor bo`lish uchun bizga obuna bo`ling.',
+    'email'=>'Pochta manzilingiz kiriting..',
+    'subscribe'=>'Obuna bo`lish',
+    'directions'=>'Tadqiqot yo`nalishlari',
+    'showing' => 'Ko‘rsatilmoqda :from dan :to gacha jami :total natijalar',
+    'jurnal'=>'Jurnal'
 ];

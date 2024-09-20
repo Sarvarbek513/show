@@ -15,7 +15,7 @@
             </div>
             <div class="row g-4 portfolio-container" >
                 @foreach ($articles as $article)
-                <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="col-lg-4 col-md-6 portfolio-item wow fadeIn" data-wow-delay="0.1s">
                     <div class="portfolio-img shadow-div rounded overflow-hidden">
                         <img class="img-fluid" src="{{ $article->image }}" alt="">
                     </div>

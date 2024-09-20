@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin2 </title>
+    <title>IMRS </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('admin/vendors/feather/feather.css')}}">
     <link rel="stylesheet" href="{{asset('admin/vendors/mdi/css/materialdesignicons.min.css')}}">
@@ -31,7 +31,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" />
+    {{-- <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" /> --}}
   </head>
   <body class="with-welcome-text">
     <div class="container-scroller">

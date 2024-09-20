@@ -10,8 +10,8 @@ class ArticleController extends Controller
 {
     public function index_client()
     {
-        $articles = Article::latest()->paginate(6);
-        return view('client.maqola.index',compact('articles'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $articles = Article::latest()->paginate(9);
+        return view('client.maqola.index',compact('articles'))->with('i', (request()->input('page', 1) - 1) * 9);
     }
     public function index()
     {

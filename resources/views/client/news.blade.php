@@ -34,34 +34,29 @@
 
 <div class="container-fluid bg-light py-5">
     <div class="container">
-        <div style="display:flex;align-items:center;box-shadow: 0 0 40px rgba(0, 0, 0, .08);" class="bg-white p-3">
+        <div class="bg-white p-3" style="box-shadow: 0 0 40px rgba(0, 0, 0, .08);">
             <h2>Yangiliklar</h2>
         </div>
         @foreach ($news as $new)
-        <div style="box-shadow: 0 0 40px rgba(0, 0, 0, .08);" class="bg-white p-4 mt-4">
-            <div style="display: flex">
-                <img class="m-2" style="width: 236px;height: 140px;" src="{{ asset($new->image) }}" width="20%">
-                {{-- <p class="mt-3">
-                    2023-yil noyabr oyi faoliyatning asosiy ko'rsatkichlari <br>
-                    <p>Sa</p>
-
-                </p> --}}
-                <div class="mt-3">
-                    <p style="color: black;font-size:24px"><a href="{{ url('news',$new->id) }}">{{ $new->name }}</a></p>
-                    <div style="display: flex">
-                        <p><i class="fa fa-clock"></i> {{ $new->created_at }}</p>
-                        <p class="mx-5"><i class="fa fa-eye"></i> {{ $new->views }}</p>
+        <div class="bg-white p-4 mt-4" style="box-shadow: 0 0 40px rgba(0, 0, 0, .08);">
+            <div class="d-flex flex-column flex-md-row align-items-start">
+                <img class="mx-2 img_dokt" src="{{ asset($new->image) }}">
+                <div class="mt-0">
+                    <p class="new_pp pt-3"><a href="{{ url('news', $new->id) }}">{{ $new->name }}</a></p>
+                    <div class="d-flex flex-column flex-sm-row">
+                        <p class="mb-1 mb-sm-0"><i class="fa fa-clock"></i> {{ $new->created_at }}</p>
+                        <p class="mx-0 mx-sm-5"><i class="fa fa-eye"></i> {{ $new->views }}</p>
                     </div>
                 </div>
             </div>
-            
         </div>
         @endforeach
         <div class="pt-4">
             {!! $news->withQueryString()->links('vendor.pagination.bootstrap-5') !!}
         </div>
     </div>
-  
 </div>
+
+
 <!-- Service End -->
 @endsection

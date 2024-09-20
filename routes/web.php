@@ -8,6 +8,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DoktarantController;
+use App\Http\Controllers\JournalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,6 @@ use App\Http\Controllers\DoktarantController;
 */
 
 Route::get('/',[NewsController::class,'index_last']);
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -32,6 +31,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+    //Raxbariyat
+    Route::get('/administrations', function () {
+        return view('client.bosses');
+    });
+    //Journals
+    Route::get('/journals',[JournalController::class,'client_index']);
+    Route::get('/journals/{journals}',[JournalController::class,'show']);
     //Bosh ish
     Route::get('/ish', function () {
         return view('client.boshish');
@@ -42,6 +48,8 @@ Route::middleware('auth')->group(function () {
     //News
     Route::get('/news', [NewsController::class, 'index_client'])->name('index_client');
     Route::get('news/{news}', [NewsController::class, 'show_client'])->name('show_client');
+    Route::get('/news/{id}/download-pdf', [NewsController::class, 'downloadPDF'])->name('news.downloadPDF');
+
     //Article
     Route::get('/maqola', [ArticleController::class, 'index_client'])->name('articles.index_client');
     Route::get('articles/{articles}', [ArticleController::class, 'show_client'])->name('articles.show_client');
@@ -79,13 +87,14 @@ Route::prefix('admin')->middleware('auth')->group(function(){
      Route::get('/works', [IshController::class, 'index'])->name('works.index');
     Route::get('/works/create', [IshController::class, 'create'])->name('works.create');
     Route::post('/works', [IshController::class, 'store'])->name('works.store');
+    Route::resource('journals', JournalController::class);
 
     //PDF
  
 });
-Route::get('/pdf', function () {
-    return view('admin.pdf.upload_pdf');
-});
+// Route::get('/pdf', function () {
+//     return view('admin.pdf.upload_pdf');
+// });
 Route::get('/download/{file}', [PDFController::class,'download']);
 Route::post('/change-language', [LanguageController::class, 'changeLanguage'])->name('change.language');
 require __DIR__.'/auth.php';
